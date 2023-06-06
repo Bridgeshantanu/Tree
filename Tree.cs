@@ -68,6 +68,23 @@ namespace DataStructure2
 
             return 1 + CalculateSize(node.Left) + CalculateSize(node.Right);
         }
+        public bool Search(T key)
+        {
+            return SearchNode(Root, key);
+        }
+
+        public bool SearchNode(INode<T> node, T key)
+        {
+            if (node == null)
+                return false;
+
+            if (key.CompareTo(node.Key) == 0)
+                return true;
+            else if (key.CompareTo(node.Key) < 0)
+                return SearchNode(node.Left, key);
+            else
+                return SearchNode(node.Right, key);
+        }
         public void Display()
         {
             DisplayInOrder(Root);

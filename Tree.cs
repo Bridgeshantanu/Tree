@@ -29,7 +29,7 @@ namespace DataStructure2
 
     public class BinarySearchTree<T> where T : IComparable<T>
     {
-        public INode<T> Root { get; private set; }
+        public INode<T> Root { get; set; }
 
         public BinarySearchTree()
         {
